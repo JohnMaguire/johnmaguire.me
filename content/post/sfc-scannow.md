@@ -1,5 +1,6 @@
 ---
 title: "Forcing “sfc /scannow” in Windows 7 Startup Repair"
+URL: "2013/10/forcing-sfc-scannow-windows-7"
 date: "2013-10-15"
 ---
 

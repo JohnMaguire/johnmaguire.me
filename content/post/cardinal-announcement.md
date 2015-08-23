@@ -1,6 +1,7 @@
 ---
 title: "Cardinal: A modular, Twisted-based Python IRC bot."
 date: "2013-02-08"
+URL: "2013/02/cardinal-a-modular-irc-bot-in-python/"
 description: "Cardinal is a Python IRC bot with an extremely simple API that supports both event-based and command-based plugins."
 ---
 
