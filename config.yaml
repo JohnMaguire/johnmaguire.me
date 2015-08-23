@@ -6,4 +6,6 @@ permalinks:
 params:
   Subtitle: A programmer in Ann Arbor, MI. I like open source software, trying new ideas, and exploring old ideas.
   AuthorName: John Maguire
-  GitHubUser: JohnMaguire
+  GithubID: JohnMaguire
+  TwitterID: JohnMaguire2013
+  LinkedInID: johnmaguire2013
