@@ -7,4 +7,4 @@ description: "Cardinal is a Python IRC bot with an extremely simple API that sup
 
 I was not satisfied with any of the existing Python IRC bots currently available for download (phenny, supybot, etc.) so I wrote my own IRC bot using Twisted. It's modular by design and has commands to load and reload plugins on the fly.
 
-[Check out her project page on Github](https://johnmaguire.github.io/Cardinal/)
+[Check out the project page on Github](https://johnmaguire.github.io/Cardinal/)
