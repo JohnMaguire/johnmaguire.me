@@ -4,6 +4,6 @@ title: john maguire's blog
 permalinks:
   post: /:year/:month/:title/
 params:
-  Subtitle: "A programmer in Ann Arbor, MI. I like open source software, trying new ideas, and exploring old ideas."
-  AuthorName: "John Maguire"
-  GitHubUser: "JohnMaguire"
+  Subtitle: A programmer in Ann Arbor, MI. I like open source software, trying new ideas, and exploring old ideas.
+  AuthorName: John Maguire
+  GitHubUser: JohnMaguire
