@@ -69,7 +69,7 @@ server {
 }
 ```
 
-The scripts we created earlier will automatically generate the files necessary to validate our identity in `/tmp/letsencrypt-auto`, and so the rest is taken care of for us.
+The scripts we created earlier will automatically generate the files necessary to validate our identity in `/tmp/letsencrypt-auto`, and so the rest is taken care of for us. The only thing we need to do is reload the nginx configuration so the changes take effect. On Debian, run `service nginx reload`.
 
 Now it's time to generate our SSL certificate! We can call the script we saved earlier like so: `DOMAINS="-d johnmaguire.me -d www.johnmaguire.me" letsencrypt_gen`.
 
@@ -113,15 +113,13 @@ server {
 
 [Mozilla](https://mozilla.github.io/server-side-tls/ssl-config-generator/) has an excellent SSL configuration generator. You can verify that SSL is working properly [using this tool from Qualys](https://www.ssllabs.com/ssltest/).
 
-Once you have everything working, we can setup a cron job to automatically renew our certificate. Run `crontab -e` and add the following:
+Once everything is setup correctly, we can create a cron job to automatically renew our certificate. Run `crontab -e` and add the following:
 
 ```
 @monthly DOMAINS="-d johnmaguire -d www.johnmaguire.me" /usr/local/bin/letsencrypt_renew
 ```
 
 You can also test out certificate renewal by running the above command manually, and viewing the certificate as reported by your browser. It will only be valid beginning at the time you created the certificate.
-
-If everything is working correctly, consider uncommenting the [HSTS](https://www.owasp.org/index.php/HTTP_Strict_Transport_Security) line in the above configuration. It will allow your users' browsers to remember that they've connected with SSL before, and refuse to use non-SSL connections. Please understand that this is a fairly permanent choice.
 
 Finally, if you'd like to send users who access your site via HTTP over to your HTTPS endpoint, you can create a catch-all location block in nginx like so:
 
@@ -137,3 +135,7 @@ server {
 	}
 }
 ```
+
+If everything is working correctly, consider uncommenting the [HSTS](https://www.owasp.org/index.php/HTTP_Strict_Transport_Security) line in the above configuration. It will allow your users' browsers to remember that they've connected with SSL before, and refuse to use non-SSL connections. Please understand that this is a fairly permanent choice.
+
+If you do decide to use HSTS, you can also add your website to browser vendors' HSTS preload list, which will let the browser know your site has SSL before a user even hits it. Use **extreme caution** with [this tool](https://hstspreload.appspot.com). Please read the **entire page** and make sure you understand what it means before submitting your domain.
