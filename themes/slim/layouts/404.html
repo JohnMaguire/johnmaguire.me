@@ -11,7 +11,8 @@
     <div class="content">
       <div>
         <h2>Oops! Couldn't find that page.</h2>
-		<hr />
+        <hr />
+        <p>Perhaps you were looking for one of the posts below?</p>
       </div>
       <div class="posts">
         {{ $paginator := .Paginate (where .Data.Pages "Type" "post") }} {{ range $paginator.Pages }}
