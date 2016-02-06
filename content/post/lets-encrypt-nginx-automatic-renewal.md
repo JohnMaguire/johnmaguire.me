@@ -116,8 +116,10 @@ server {
 Once everything is setup correctly, we can create a cron job to automatically renew our certificate. Run `crontab -e` and add the following:
 
 ```
-@monthly DOMAINS="-d johnmaguire -d www.johnmaguire.me" /usr/local/bin/letsencrypt_renew
+0 2 1 * * DOMAINS="-d johnmaguire -d www.johnmaguire.me" /usr/local/bin/letsencrypt_renew >> /var/log/le-renewal.log 2>& 1
 ```
+
+This will set cron up renew your domain every month, on the first, at 2am. The process will be appended to a log file at `/var/log/le-renewal.log`.
 
 You can also test out certificate renewal by running the above command manually, and viewing the certificate as reported by your browser. It will only be valid beginning at the time you created the certificate.
 
