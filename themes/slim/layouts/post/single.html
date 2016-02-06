@@ -21,6 +21,12 @@
           <a class="btn previous " href="{{.Prev.Permalink}}"> Prev</a> {{ end }} {{ if .Next }}
           <a class="btn next " href="{{.Next.Permalink}}"> Next</a> {{ end }}
         </div>
+		<div class="post">
+			<script data-isso="//isso.moldyhummus.com//"
+			        src="//isso.moldyhummus.com/js/embed.min.js"></script>
+
+			<section id="isso-thread"></section>
+		</div>
       </div>
     </div>
     {{ partial "footer.html" . }}
